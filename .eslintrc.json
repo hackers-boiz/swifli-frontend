@@ -1,0 +1,12 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    "indent": ["error", 2],
+    "react/jsx-indent": ["error", 2],
+    "react/jsx-indent-props": ["error", 2],
+    "semi": ["error"],
+    "no-multi-spaces": "error",
+    "no-trailing-spaces": "error",
+    "object-curly-spacing": ["error", "always"]
+  }
+}
