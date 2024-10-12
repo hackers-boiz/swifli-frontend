@@ -13,17 +13,17 @@ export const metadata: Metadata = {
     title: 'Mint NFT | Swifli',
     description:
       'Swifli is a platform for creating and sharing your own NFTs.',
-    images: [{ url: 'https://swifli-frontend.vercel.app/og-bg.jpg' }],
+    // images: [{ url: 'https://swifli-frontend.vercel.app/og-bg.jpg' }],
     type: 'website',
     url: 'https://swifli.xyz',
     siteName: 'Swifli',
   },
-  twitter: {
-    card: 'summary_large_image',
-    site: 'Swifli',
-    creator: 'swifli',
-    images: [{ url: 'https://swifli-frontend.vercel.app/og-bg.jpg' }],
-  },
+  // twitter: {
+  // card: 'summary_large_image',
+  // site: 'Swifli',
+  // creator: 'swifli',
+  // images: [{ url: 'https://swifli-frontend.vercel.app/og-bg.jpg' }],
+  // },
 };
 
 export default function RootLayout({
