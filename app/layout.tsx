@@ -7,7 +7,7 @@ import { Suspense } from "react";
 const inter = Chakra_Petch({ weight: ["300", "400", "500", "600", "700"], subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Mint NFT | Swifli",
+  title: `Mint NFT | Swifli`,
   description: "Swifli is a platform for creating and sharing your own NFTs.",
   openGraph: {
     title: 'Mint NFT | Swifli',
