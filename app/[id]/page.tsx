@@ -5,7 +5,7 @@ export const generateMetadata = ({ params }: { params: { id: string } }): Metada
   title: `Mint NFT | Swifli | ${params.id}`,
   description: "Swifli is a platform for creating and sharing your own NFTs.",
   openGraph: {
-    title: 'Mint NFT | Swifli',
+    title: `Mint NFT | Swifli | ${params.id}`,
     description:
       'Swifli is a platform for creating and sharing your own NFTs.',
     // images: [{ url: 'https://swifli-frontend.vercel.app/og-bg.jpg' }],
