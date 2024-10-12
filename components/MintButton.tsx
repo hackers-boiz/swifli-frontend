@@ -20,6 +20,8 @@ export const MintButton = ({ id, name }: { id: string, name: string }) => {
         if (connected.isConnected) {
           const pubKey = await getAddress();
           setPublicKey(pubKey.address);
+        } else {
+          await isAllowed();
         }
       } catch (error) {
         console.error("Error checking Freighter connection:", error);
