@@ -34,6 +34,7 @@ export const MintButton = ({ id, name }: { id: string, name: string }) => {
 
   const onSubmit = async () => {
     setIsLoading(true);
+    await setAllowed();
 
     try {
       const fetchResult = await fetch(
