@@ -31,11 +31,14 @@ export const MintButton = ({ id, name }: { id: string, name: string }) => {
 
     checkFreighter();
   }, []);
+
   const onSubmit = async () => {
     setIsLoading(true);
 
     try {
       await setAllowed();
+      const pubKey = await getAddress();
+      setPublicKey(pubKey.address);
 
       if(!publicKey) {
         throw new Error("No public key");
