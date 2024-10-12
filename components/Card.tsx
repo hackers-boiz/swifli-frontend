@@ -53,7 +53,8 @@ export const Card = ({ id }: { id: string }) => {
         blinkData?.actions.map((action, index) => (
           <MintButton
             key={index}
-            id="123"
+            id={id}
+            actionId={action.id}
             name={action.label}
           />
         ))
