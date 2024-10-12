@@ -1,4 +1,4 @@
-import { getAddress, signTransaction, isConnected } from "@stellar/freighter-api";
+import { getAddress, signTransaction, isConnected, isAllowed } from "@stellar/freighter-api";
 import { SorobanRpc, TransactionBuilder } from "@stellar/stellar-sdk";
 import * as StellarSdk from "@stellar/stellar-sdk";
 import { useEffect, useState } from "react";
@@ -34,6 +34,8 @@ export const MintButton = ({ id, name }: { id: string, name: string }) => {
     setIsLoading(true);
 
     try {
+      await isAllowed();
+
       const fetchResult = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/${id}/${name.toLowerCase()}`,
         {
