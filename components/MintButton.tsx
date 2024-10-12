@@ -1,4 +1,4 @@
-import { getAddress, signTransaction, isConnected, isAllowed } from "@stellar/freighter-api";
+import { getAddress, signTransaction, isConnected, isAllowed, setAllowed } from "@stellar/freighter-api";
 import { SorobanRpc, TransactionBuilder } from "@stellar/stellar-sdk";
 import * as StellarSdk from "@stellar/stellar-sdk";
 import { useEffect, useState } from "react";
@@ -21,7 +21,7 @@ export const MintButton = ({ id, name }: { id: string, name: string }) => {
           const pubKey = await getAddress();
           setPublicKey(pubKey.address);
         } else {
-          await isAllowed();
+          await setAllowed();
         }
       } catch (error) {
         console.error("Error checking Freighter connection:", error);
@@ -31,12 +31,15 @@ export const MintButton = ({ id, name }: { id: string, name: string }) => {
 
     checkFreighter();
   }, []);
-
   const onSubmit = async () => {
     setIsLoading(true);
 
     try {
-      await isAllowed();
+      await setAllowed();
+
+      if(!publicKey) {
+        throw new Error("No public key");
+      }
 
       const fetchResult = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/${id}/${name.toLowerCase()}`,
