@@ -36,7 +36,6 @@ export const MintButton = ({ id, name }: { id: string, name: string }) => {
     setIsLoading(true);
 
     const pubKey = await getAddress();
-    setPublicKey(pubKey.address);
 
     try {
       const fetchResult = await fetch(
@@ -47,7 +46,7 @@ export const MintButton = ({ id, name }: { id: string, name: string }) => {
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ publicKey: publicKey }),
+          body: JSON.stringify({ publicKey: pubKey }),
         },
       );
 
