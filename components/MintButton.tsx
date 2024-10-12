@@ -36,14 +36,6 @@ export const MintButton = ({ id, name }: { id: string, name: string }) => {
     setIsLoading(true);
 
     try {
-      await setAllowed();
-      const pubKey = await getAddress();
-      setPublicKey(pubKey.address);
-
-      if(!publicKey) {
-        throw new Error("No public key");
-      }
-
       const fetchResult = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_URL}/${id}/${name.toLowerCase()}`,
         {
