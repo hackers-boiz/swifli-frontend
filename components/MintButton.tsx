@@ -46,7 +46,7 @@ export const MintButton = ({ id, actionId, name }: { id: string, actionId: strin
             Accept: 'application/json',
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ publicKey: pubKey }),
+          body: JSON.stringify({ publicKey: pubKey.address }),
         },
       );
 
